@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studio 310 Hair Salon | Boksburg</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        color: #333;
+    }
+    
+    header {
+        background: linear-gradient(135deg, #8b5a3c 0%, #6d4c3a 100%);
+        color: white;
+        padding: 1rem 0;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+    
+    nav {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 2rem;
+    }
+    
+    .logo {
+        font-size: 2rem;
+        font-weight: bold;
+        letter-spacing: 2px;
+    }
+    
+    .nav-links {
+        display: flex;
+        gap: 2rem;
+        list-style: none;
+        flex-wrap: wrap;
+    }
+    
+    .nav-links a {
+        color: white;
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s;
+    }
+    
+    .nav-links a:hover {
+        color: #d4a574;
+    }
+    
+    .hero {
+        background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                    url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:%238b5a3c"/><stop offset="100%" style="stop-color:%23d4a574"/></linearGradient></defs><rect fill="url(%23g)" width="1200" height="600"/></svg>');
+        background-size: cover;
+        background-position: center;
+        height: 600px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: white;
+    }
+    
+    .hero-content h1 {
+        font-size: 3.5rem;
+        margin-bottom: 1rem;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    }
+    
+    .hero-content p {
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+        text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    }
+    
+    .btn {
+        display: inline-block;
+        padding: 1rem 2rem;
+        background: #d4a574;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: bold;
+        transition: background 0.3s, transform 0.2s;
+        border: none;
+        cursor: pointer;
+        font-size: 1rem;
+    }
+    
+    .btn:hover {
+        background: #b8935f;
+        transform: translateY(-2px);
+    }
+    
+    section {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 4rem 2rem;
+    }
+    
+    h2 {
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+        text-align: center;
+        color: #6d4c3a;
+    }
+    
+    .promo-banner {
+        background: linear-gradient(135deg, #d4a574 0%, #b8935f 100%);
+        color: white;
+        text-align: center;
+        padding: 2rem;
+        margin: -4rem 0 4rem 0;
+    }
+    
+    .promo-banner h3 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+    
+    .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+        margin-top: 3rem;
+    }
+    
+    .service-card {
+        background: white;
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        transition: transform 0.3s, box-shadow 0.3s;
+        border-top: 4px solid #d4a574;
+    }
+    
+    .service-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+    }
+    
+    .service-card h3 {
+        color: #8b5a3c;
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
+    }
+    
+    .price {
+        color: #d4a574;
+        font-weight: bold;
+        font-size: 1.2rem;
+        margin-top: 1rem;
+    }
+    
+    .about {
+        background: #f9f6f2;
+    }
+    
+    .about-content {
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+        font-size: 1.1rem;
+        line-height: 1.8;
+    }
+    
+    .hours-section {
+        background: white;
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        margin-top: 3rem;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .hours-section h3 {
+        color: #8b5a3c;
+        margin-bottom: 1.5rem;
+        text-align: center;
+    }
+    
+    .hours-list {
+        list-style: none;
+    }
+    
+    .hours-list li {
+        display: flex;
+        justify-content: space-between;
+        padding: 0.5rem 0;
+        border-bottom: 1px solid #e0e0e0;
+    }
+    
+    .hours-list li:last-child {
+        border-bottom: none;
+    }
+    
+    .staff-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        margin-top: 3rem;
+    }
+    
+    .staff-card {
+        background: white;
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        text-align: center;
+        transition: transform 0.3s;
+    }
+    
+    .staff-card:hover {
+        transform: translateY(-5px);
+    }
+    
+    .staff-photo {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #d4a574 0%, #b8935f 100%);
+        margin: 0 auto 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 3rem;
+        color: white;
+    }
+    
+    .staff-card h3 {
+        color: #8b5a3c;
+        margin-bottom: 0.5rem;
+    }
+    
+    .staff-role {
+        color: #d4a574;
+        font-weight: bold;
+        margin-bottom: 1rem;
+    }
+    
+    .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
+        margin-top: 3rem;
+    }
+    
+    .gallery-item {
+        aspect-ratio: 1;
+        border-radius: 10px;
+        background: linear-gradient(135deg, #e0e0e0 0%, #f5f5f5 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 3rem;
+        color: #999;
+        overflow: hidden;
+        transition: transform 0.3s;
+        cursor: pointer;
+    }
+    
+    .gallery-item:hover {
+        transform: scale(1.05);
+    }
+    
+    .before-after {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+        margin-top: 3rem;
+    }
+    
+    .ba-card {
+        background: white;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    
+    .ba-images {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .ba-image {
+        aspect-ratio: 1;
+        background: linear-gradient(135deg, #e0e0e0 0%, #f5f5f5 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+        color: #999;
+    }
+    
+    .ba-image:first-child {
+        border-right: 2px solid white;
+    }
+    
+    .ba-label {
+        padding: 1rem;
+        text-align: center;
+        font-weight: bold;
+        color: #8b5a3c;
+    }
+    
+    .testimonials-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin-top: 3rem;
+    }
+    
+    .testimonial-card {
+        background: white;
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        position: relative;
+    }
+    
+    .testimonial-card::before {
+        content: '"';
+        font-size: 4rem;
+        color: #d4a574;
+        position: absolute;
+        top: -10px;
+        left: 20px;
+        line-height: 1;
+    }
+    
+    .testimonial-text {
+        font-style: italic;
+        margin-bottom: 1rem;
+        color: #555;
+    }
+    
+    .testimonial-author {
+        font-weight: bold;
+        color: #8b5a3c;
+        text-align: right;
+    }
+    
+    .stars {
+        color: #d4a574;
+        margin-bottom: 0.5rem;
+    }
+    
+    .contact-info {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        margin-top: 3rem;
+    }
+    
+    .contact-card {
+        background: white;
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        text-align: center;
+    }
+    
+    .contact-card h3 {
+        color: #8b5a3c;
+        margin-bottom: 1rem;
+    }
+    
+    .contact-card p {
+        margin: 0.5rem 0;
+    }
+    
+    .contact-card a {
+        color: #6d4c3a;
+        text-decoration: none;
+        transition: color 0.3s;
+    }
+    
+    .contact-card a:hover {
+        color: #d4a574;
+    }
+    
+    .contact-form {
+        max-width: 600px;
+        margin: 3rem auto 0;
+        background: white;
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    
+    .form-group {
+        margin-bottom: 1.5rem;
+    }
+    
+    .form-group label {
+        display: block;
+        margin-bottom: 0.5rem;
+        color: #6d4c3a;
+        font-weight: bold;
+    }
+    
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+        width: 100%;
+        padding: 0.75rem;
+        border: 2px solid #e0e0e0;
+        border-radius: 5px;
+        font-family: inherit;
+        font-size: 1rem;
+        transition: border-color 0.3s;
+    }
+    
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+        outline: none;
+        border-color: #d4a574;
+    }
+    
+    .form-group textarea {
+        min-height: 120px;
+        resize: vertical;
+    }
+    
+    .social-links {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        margin-top: 2rem;
+    }
+    
+    .social-link {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: #8b5a3c;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        text-decoration: none;
+        font-size: 1.5rem;
+        transition: background 0.3s, transform 0.3s;
+    }
+    
+    .social-link:hover {
+        background: #d4a574;
+        transform: scale(1.1);
+    }
+    
+    .map-container {
+        margin-top: 3rem;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    
+    footer {
+        background: #6d4c3a;
+        color: white;
+        text-align: center;
+        padding: 2rem;
+    }
+    
+    @media (max-width: 768px) {
+        .nav-links {
+            gap: 1rem;
+            font-size: 0.9rem;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+        }
+        
+        .hero-content h1 {
+            font-size: 2.5rem;
+        }
+        
+        .hero-content p {
+            font-size: 1.2rem;
+        }
+        
+        h2 {
+            font-size: 2rem;
+        }
+    }
+</style>
+```
+
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">STUDIO 310</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#staff">Team</a></li>
+                <li><a href="#testimonials">Reviews</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+```
+<section id="home" class="hero">
+    <div class="hero-content">
+        <h1>Welcome to Studio 310</h1>
+        <p>Your Premier Hair Salon in Boksburg</p>
+        <a href="#booking" class="btn">Book Your Appointment</a>
+    </div>
+</section>
+
+<div class="promo-banner">
+    <h3>✨ Special Offer ✨</h3>
+    <p>New clients get 20% off their first visit!</p>
+    <p style="margin-top: 0.5rem;">Book this month and receive a complimentary deep conditioning treatment</p>
+</div>
+
+<section id="services">
+    <h2>Our Services & Pricing</h2>
+    <div class="services-grid">
+        <div class="service-card">
+            <h3>Ladies Cut & Style</h3>
+            <p>Expert cuts and styling tailored to your face shape and lifestyle. Includes wash and blow dry.</p>
+            <p class="price">From R350</p>
+        </div>
+        <div class="service-card">
+            <h3>Men's Cut</h3>
+            <p>Precision cuts and grooming for the modern gentleman. Includes styling.</p>
+            <p class="price">From R180</p>
+        </div>
+        <div class="service-card">
+            <h3>Full Color</h3>
+            <p>Professional all-over color with premium products. Includes toner and styling.</p>
+            <p class="price">From R650</p>
+        </div>
+        <div class="service-card">
+            <h3>Highlights/Balayage</h3>
+            <p>Hand-painted highlights for natural-looking dimension. Partial or full head available.</p>
+            <p class="price">From R850</p>
+        </div>
+        <div class="service-card">
+            <h3>Deep Conditioning Treatment</h3>
+            <p>Intensive repair treatment to restore moisture and shine. Perfect for damaged hair.</p>
+            <p class="price">R350</p>
+        </div>
+        <div class="service-card">
+            <h3>Keratin Treatment</h3>
+            <p>Smoothing treatment that eliminates frizz for up to 3 months.</p>
+            <p class="price">From R1,200</p>
+        </div>
+        <div class="service-card">
+            <h3>Bridal Hair</h3>
+            <p>Complete bridal package including trial and day-of styling. Making your special day perfect.</p>
+            <p class="price">From R1,500</p>
+        </div>
+        <div class="service-card">
+            <h3>Special Event Styling</h3>
+            <p>Elegant updos and styles for any occasion. Includes consultation.</p>
+            <p class="price">From R450</p>
+        </div>
+        <div class="service-card">
+            <h3>Hair Extensions</h3>
+            <p>Premium quality extensions for length and volume. Various methods available.</p>
+            <p class="price">From R2,500</p>
+        </div>
+        <div class="service-card">
+            <h3>Blow Dry & Style</h3>
+            <p>Professional blow dry for that salon-fresh look anytime.</p>
+            <p class="price">R250</p>
+        </div>
+        <div class="service-card">
+            <h3>Consultation</h3>
+            <p>Personalized hair consultation with our expert stylists. Complimentary with service.</p>
+            <p class="price">Free</p>
+        </div>
+        <div class="service-card">
+            <h3>Children's Cut (Under 12)</h3>
+            <p>Gentle cuts for kids in a fun, relaxed environment.</p>
+            <p class="price">R150</p>
+        </div>
+    </div>
+</section>
+
+<section id="about" class="about">
+    <h2>About Studio 310</h2>
+    <div class="about-content">
+        <p>Studio 310 is your trusted hair salon located in the heart of Boksburg. We pride ourselves on delivering exceptional hair care services in a welcoming and professional environment.</p>
+        <p>Our experienced stylists are passionate about helping you look and feel your best. We stay current with the latest trends and techniques while maintaining the classic styles our clients love.</p>
+        <p>Using only premium products and advanced techniques, we ensure every client leaves feeling confident and beautiful. Visit us at our convenient location in Impala Park and experience the Studio 310 difference.</p>
+    </div>
+    
+    <div class="hours-section">
+        <h3>⏰ Opening Hours</h3>
+        <ul class="hours-list">
+            <li><span>Monday</span><span>9:00 AM - 6:00 PM</span></li>
+            <li><span>Tuesday</span><span>9:00 AM - 6:00 PM</span></li>
+            <li><span>Wednesday</span><span>9:00 AM - 6:00 PM</span></li>
+            <li><span>Thursday</span><span>9:00 AM - 7:00 PM</span></li>
+            <li><span>Friday</span><span>9:00 AM - 7:00 PM</span></li>
+            <li><span>Saturday</span><span>8:00 AM - 4:00 PM</span></li>
+            <li><span>Sunday</span><span>Closed</span></li>
+        </ul>
+    </div>
+</section>
+
+<section id="staff">
+    <h2>Meet Our Team</h2>
+    <div class="staff-grid">
+        <div class="staff-card">
+            <div class="staff-photo">👩</div>
+            <h3>Jen Dale</h3>
+            <p class="staff-role">Owner & Master Stylist</p>
+            <p>With over 15 years of experience, Jen specializes in color techniques and bridal styling. Her passion for making clients feel beautiful shines through in every appointment.</p>
+        </div>
+        <div class="staff-card">
+            <div class="staff-photo">👩</div>
+            <h3>Sarah Mitchell</h3>
+            <p class="staff-role">Senior Stylist</p>
+            <p>Sarah is our balayage expert with 10 years experience. She loves creating natural-looking highlights and dimensional color.</p>
+        </div>
+        <div class="staff-card">
+            <div class="staff-photo">👨</div>
+            <h3>Michael Brown</h3>
+            <p class="staff-role">Men's Grooming Specialist</p>
+            <p>Michael brings precision cutting and modern styling techniques to every men's service. He stays ahead of the latest trends.</p>
+        </div>
+        <div class="staff-card">
+            <div class="staff-photo">👩</div>
+            <h3>Lisa Thompson</h3>
+            <p class="staff-role">Junior Stylist</p>
+            <p>Recently qualified with fresh ideas and enthusiasm, Lisa specializes in cuts and blow-drys with amazing attention to detail.</p>
+        </div>
+    </div>
+</section>
+
+<section id="gallery">
+    <h2>Our Work</h2>
+    <div class="gallery-grid">
+        <div class="gallery-item">📸</div>
+        <div class="gallery-item">📸</div>
+        <div class="gallery-item">📸</div>
+        <div class="gallery-item">📸</div>
+        <div class="gallery-item">📸</div>
+        <div class="gallery-item">📸</div>
+    </div>
+    
+    <h2 style="margin-top: 4rem;">Before & After Transformations</h2>
+    <div class="before-after">
+        <div class="ba-card">
+            <div class="ba-images">
+                <div class="ba-image">Before</div>
+                <div class="ba-image">After</div>
+            </div>
+            <div class="ba-label">Balayage Transformation</div>
+        </div>
+        <div class="ba-card">
+            <div class="ba-images">
+                <div class="ba-image">Before</div>
+                <div class="ba-image">After</div>
+            </div>
+            <div class="ba-label">Full Color Change</div>
+        </div>
+        <div class="ba-card">
+            <div class="ba-images">
+                <div class="ba-image">Before</div>
+                <div class="ba-image">After</div>
+            </div>
+            <div class="ba-label">Keratin Treatment</div>
+        </div>
+    </div>
+</section>
+
+<section id="testimonials">
+    <h2>What Our Clients Say</h2>
+    <div class="testimonials-grid">
+        <div class="testimonial-card">
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+            <p class="testimonial-text">Jen is absolutely amazing! She transformed my hair and gave me exactly what I wanted. The salon has such a welcoming atmosphere. Highly recommend!</p>
+            <p class="testimonial-author">- Amanda R.</p>
+        </div>
+        <div class="testimonial-card">
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+            <p class="testimonial-text">Best hair salon in Boksburg! The team is professional, friendly, and really knows their craft. I always leave feeling like a million bucks.</p>
+            <p class="testimonial-author">- Michelle P.</p>
+        </div>
+        <div class="testimonial-card">
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+            <p class="testimonial-text">I've been coming to Studio 310 for years and wouldn't go anywhere else. Jen did my wedding hair and it was absolutely perfect!</p>
+            <p class="testimonial-author">- Jessica M.</p>
+        </div>
+        <div class="testimonial-card">
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+            <p class="testimonial-text">Great service and amazing results every time. The keratin treatment changed my life - no more frizz! Thank you Studio 310!</p>
+            <p class="testimonial-author">- Karen S.</p>
+        </div>
+        <div class="testimonial-card">
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+            <p class="testimonial-text">Michael does the best men's cuts. Professional, quick, and always on point. This is my go-to spot now.</p>
+            <p class="testimonial-author">- David L.</p>
+        </div>
+        <div class="testimonial-card">
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+            <p class="testimonial-text">Sarah's balayage work is incredible. She really listens to what you want and delivers beyond expectations. Love my new look!</p>
+            <p class="testimonial-author">- Nicole T.</p>
+        </div>
+    </div>
+</section>
+
+<section id="booking">
+    <h2>Book Your Appointment</h2>
+    <div class="contact-form">
+        <form>
+            <div class="form-group">
+                <label for="name">Full Name *</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number *</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+            <div class="form-group">
+                <label for="service">Service Required *</label>
+                <select id="service" name="service" required>
+                    <option value="">Select a service...</option>
+                    <option value="ladies-cut">Ladies Cut & Style</option>
+                    <option value="mens-cut">Men's Cut</option>
+                    <option value="color">Full Color</option>
+                    <option value="highlights">Highlights/Balayage</option>
+                    <option value="treatment">Deep Conditioning Treatment</option>
+                    <option value="keratin">Keratin Treatment</option>
+                    <option value="bridal">Bridal Hair</option>
+                    <option value="event">Special Event Styling</option>
+                    <option value="extensions">Hair Extensions</option>
+                    <option value="blowdry">Blow Dry & Style</option>
+                    <option value="consultation">Consultation</option>
+                    <option value="kids">Children's Cut</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="date">Preferred Date *</label>
+                <input type="date" id="date" name="date" required>
+            </div>
+            <div class="form-group">
+                <label for="time">Preferred Time *</label>
+                <input type="time" id="time" name="time" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Additional Information</label>
+                <textarea id="message" name="message" placeholder="Tell us about your hair goals, any concerns, or special requests..."></textarea>
+            </div>
+            <button type="submit" class="btn" style="width: 100%;">Request Appointment</button>
+        </form>
+    </div>
+</section>
+
+<section id="contact">
+    <h2>Contact Us</h2>
+    <div class="contact-info">
+        <div class="contact-card">
+            <h3>📍 Location</h3>
+            <p>100 Elizabeth Road</p>
+            <p>Impala Park, Boksburg</p>
+            <p>1459</p>
+            <p>ElRidge Office Park</p>
+            <p>Block B, Unit 6</p>
+        </div>
+        <div class="contact-card">
+            <h3>📧 Email</h3>
+            <p><a href="mailto:jen@studio310.co.za">jen@studio310.co.za</a></p>
+            <p><a href="mailto:jenhayley@hotmail.co.za">jenhayley@hotmail.co.za</a></p>
+        </div>
+        <div class="contact-card">
+            <h3>📱 Phone</h3>
+            <p><a href="tel:+27123456789">+27 (0)12 345 6789</a></p>
+            <p>WhatsApp available</p>
+        </div>
+        <div class="contact-card">
