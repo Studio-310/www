@@ -20,8 +20,8 @@ body {
 
 /* Header / Nav */
 header {
-  background-color: var(--navy);
-  color: var(--white);
+  background-color: var(--white);
+  color: var(--navy);
   padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
